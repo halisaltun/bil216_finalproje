@@ -181,11 +181,11 @@ def phase1_content():
     with col1:
         st.info("""
         **📋 Görev Tanımı:**
-        - Verilen ses dosyalarından MFCC, ZCR, Enerji, Pitch gibi öznitelikleri çıkarın
-        - Çıkardığınız öznitelikleri görselleştirin
+        - Verilen ses dosyalarından MFCC, ZCR, Enerji, Pitch vb gibi öznitelikleri çıkarın
+        - Çıkardığınız öznitelikleri kullanarak ilk çalışan model. Amaç: Skora dahil olmak.
         - Hangi özniteliklerin duygu tanımada daha etkili olduğunu raporlayın
         
-        **📅 Son Teslim Tarihi:** 15 Mayıs 2026, 23:59
+        **📅 Son Teslim Tarihi:** 5 Mayıs 2026, 23:59
         """)
     
     with col2:
@@ -201,11 +201,11 @@ def phase2_content():
     with col1:
         st.info("""
         **📋 Görev Tanımı:**
-        - Faz 1'de çıkardığınız özniteliklerle bir sınıflandırıcı eğitin
-        - Random Forest, SVM, KNN veya Derin Öğrenme modellerini deneyin
-        - Modelinizi RAVDESS veri seti üzerinde test edin
+        - Faz 1'de çıkardığınız özniteliklerle farklı bir sınıflandırıcı eğitin
+        - Literatür taraması sonrası yeni öznitelikler ekleyerek model başarımı artırın
+        - Amaç: Skoru yukarı çekmek. 
         
-        **📅 Son Teslim Tarihi:** 5 Haziran 2026, 23:59
+        **📅 Son Teslim Tarihi:** 19 Mayıs 2026, 23:59
         """)
     
     with col2:
@@ -224,8 +224,10 @@ def phase3_content():
         - Faz 2'deki modelinizi gerçek zamanlı çalışacak şekilde optimize edin
         - Mikrofon veya dosya yükleme ile canlı duygu analizi yapın
         - Web arayüzü ile demo sunun
+        - En optimize edilmiş parametreler ve nihai başarı oranı.
+
         
-        **📅 Son Teslim Tarihi:** 30 Haziran 2026, 23:59
+        **📅 Son Teslim Tarihi:** 2 Haziran 2026, 23:59
         """)
     
     with col2:
