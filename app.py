@@ -181,7 +181,7 @@ def phase1_content():
     with col1:
         st.info("""
         **📋 Görev Tanımı:**
-        - Verilen ses dosyalarından MFCC, ZCR, Enerji, Pitch vb gibi öznitelikleri çıkarın
+        - Verilen ses dosyalarından MFCC, ZCR, Enerji, Pitch vb gibi zaman düzlemi öznitelikleri çıkarın
         - Çıkardığınız öznitelikleri kullanarak ilk çalışan model. Amaç: Skora dahil olmak.
         - Hangi özniteliklerin duygu tanımada daha etkili olduğunu raporlayın
         
@@ -201,8 +201,9 @@ def phase2_content():
     with col1:
         st.info("""
         **📋 Görev Tanımı:**
-        - Faz 1'de çıkardığınız özniteliklerle farklı bir sınıflandırıcı eğitin
-        - Literatür taraması sonrası yeni öznitelikler ekleyerek model başarımı artırın
+        - Faz 1'de çıkardığınız özniteliklere ek olarak Frekans düzlemi öznitelikleri elde edin
+        - Bu yeni özniteliklerle yeni bir sınıflandırıcı eğitin
+        - Gerekli ise Literatür taraması sonrası yeni öznitelikler ekleyerek model başarımı artırın
         - Amaç: Skoru yukarı çekmek. 
         
         **📅 Son Teslim Tarihi:** 19 Mayıs 2026, 23:59
@@ -316,7 +317,10 @@ def main():
                 col1, col2 = st.columns(2)
                 with col1:
                     group_id = st.text_input("Grup No (Örn: Grup 01)", placeholder="Grup 01")
-                    algorithm = st.selectbox("Kullanılan Yöntem", ["MFCC", "Mel-Spectrogram", "ZCR", "Chroma", "Karışık", "Diğer"])
+                    algorithm = st.selectbox("Kullanılan Yöntem", ["Random Forest", "SVM (RBF)", "KNN", "Decision Tree", "MLP (YSA)", 
+ "CNN (1D)", "CNN (2D)", "LSTM", "BiLSTM", "GRU", "CNN-LSTM", 
+ "Transformer", "ResNet", "XGBoost", "Gradient Boosting", 
+ "AdaBoost", "Ensemble", "Transfer Learning", "Karışık", "Diğer"])
                 with col2:
                     accuracy = st.number_input("Başarı Oranı (%)", min_value=0.0, max_value=100.0, step=0.1)
                     features = st.text_area("Çıkarılan Öznitelikler", placeholder="MFCC, ZCR, Enerji, Pitch...")
@@ -347,7 +351,10 @@ def main():
                 col1, col2 = st.columns(2)
                 with col1:
                     group_id = st.text_input("Grup No", placeholder="Grup 01")
-                    algorithm = st.selectbox("Model", ["Random Forest", "SVM", "KNN", "CNN", "LSTM", "MLP", "Diğer"])
+                    algorithm = st.selectbox("Model", ["Random Forest", "SVM (RBF)", "KNN", "Decision Tree", "MLP (YSA)", 
+ "CNN (1D)", "CNN (2D)", "LSTM", "BiLSTM", "GRU", "CNN-LSTM", 
+ "Transformer", "ResNet", "XGBoost", "Gradient Boosting", 
+ "AdaBoost", "Ensemble", "Transfer Learning", "Karışık", "Diğer"])
                 with col2:
                     accuracy = st.number_input("Doğruluk (%)", min_value=0.0, max_value=100.0, step=0.1)
                     features = st.text_area("Kullanılan Öznitelikler", placeholder="MFCC, ZCR, Pitch...")
@@ -375,7 +382,10 @@ def main():
                 col1, col2 = st.columns(2)
                 with col1:
                     group_id = st.text_input("Grup No", placeholder="Grup 01")
-                    algorithm = st.selectbox("Model Tipi", ["CNN", "LSTM", "Transformer", "Hybrid", "Diğer"])
+                    algorithm = st.selectbox("Model Tipi", ["Random Forest", "SVM (RBF)", "KNN", "Decision Tree", "MLP (YSA)", 
+ "CNN (1D)", "CNN (2D)", "LSTM", "BiLSTM", "GRU", "CNN-LSTM", 
+ "Transformer", "ResNet", "XGBoost", "Gradient Boosting", 
+ "AdaBoost", "Ensemble", "Transfer Learning", "Karışık", "Diğer"])
                 with col2:
                     accuracy = st.number_input("Gerçek Zamanlı Başarı (%)", min_value=0.0, max_value=100.0, step=0.1)
                     features = st.text_area("Optimizasyon Detayları", placeholder="Model mimarisi, kullanılan teknikler...")
